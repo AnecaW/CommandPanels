@@ -1,0 +1,14 @@
+id: commandpanels
+name: CommandPanels
+version: 1.0.0
+api-version: 1
+required-api-classes:
+  - org.wannes.plugModCore.api.PanelService
+  - org.wannes.plugModCore.api.ServerTransferService
+  - org.wannes.plugModCore.api.PlaceholderService
+main: org.wannes.commandpanels.CommandPanelsModule
+description: Visual inventory menus with protected items and ordered actions
+website:
+  enabled: true
+  entry: web/index.html
+  title: CommandPanels
