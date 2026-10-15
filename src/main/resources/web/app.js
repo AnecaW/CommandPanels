@@ -1,7 +1,7 @@
 'use strict';
 const $=s=>document.querySelector(s), shared=window.MinecraftTextEditor;
 const esc=s=>shared.escapeAttr(String(s??'')), clone=o=>JSON.parse(JSON.stringify(o));
-const moduleId=location.pathname.split('/').filter(Boolean)[2], base='/api/modules/'+encodeURIComponent(moduleId);
+const moduleId=location.pathname.match(/\/modules\/website\/([^/]+)/)?.[1], base='/api/modules/'+encodeURIComponent(moduleId);
 let capability='',state=null,catalogue=null,draft=null,original='',importing=false,dirty=false,busy=false,slot=0,clipboard=null,selected=new Set(),editors=[],titleEditor=null;
 const status=(message,error=false)=>{ $('#status').textContent=message; $('#status').classList.toggle('error',error); };
 async function api(path,values={},post=false){
